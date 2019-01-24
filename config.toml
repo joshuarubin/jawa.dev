@@ -1,4 +1,4 @@
-baseURL = "https://joshuarubin.github.io/jawa/"
+baseURL = "https://joshuarubin.github.io/"
 languageCode = "en-us"
 title = "Joshua Rubin"
 theme = "simple-hugo-theme"
