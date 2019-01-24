@@ -4,6 +4,9 @@ workflow "Deploy to GitHub Pages" {
 }
 
 action "hugo-deploy-gh-pages" {
-  uses = "khanhicetea/gh-actions-hugo-deploy-gh-pages@master"
+  uses = "joshuarubin/hugo-deploy-gh-pages@master"
   secrets = ["GITHUB_TOKEN"]
+  env = {
+    BRANCH = "gh-pages"
+  }
 }
