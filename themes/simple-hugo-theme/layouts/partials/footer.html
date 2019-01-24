@@ -16,7 +16,7 @@
     {{/* Display copyright if available */}}
     {{ if .Site.Copyright }}
     <div class="copyright">
-        {{- .Site.Copyright -}}
+        {{ replace .Site.Copyright "{year}" now.Year | safeHTML }}
     </div>
     {{ end }}
 </div>
