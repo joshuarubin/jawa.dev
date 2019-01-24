@@ -1,0 +1,4 @@
+{{ $syntax := resources.Get "css/syntax.css" | resources.Minify -}}
+<style>
+    {{- $syntax.Content | safeCSS -}}
+</style>
