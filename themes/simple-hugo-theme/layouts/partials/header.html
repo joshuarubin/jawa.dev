@@ -1,7 +1,7 @@
 {{ block "header" . }}
 <div class="header">
     <h1>
-        <a href="{{ .Site.BaseURL | relLangURL }}">Home</a>
+        <a href="{{ .Site.BaseURL | relLangURL }}">home</a>
         <div class="header-menu">
             {{- range .Site.Menus.main -}}
             {{ if eq (hasPrefix .URL "mailto:") true }}

@@ -13,7 +13,6 @@ tags:
   - Go
 ---
 
-<img align="left" alt=”golang gopher” src="/img/gopher_golang.png">
 When Go (golang for you robots out there) was first announced I remember looking
 over the list of its key features and feeling astonished that a new language
 would omit the classes and inheritance that I had come to depend on so heavily.
@@ -30,11 +29,9 @@ they were useful but tedious. Despite hearing so many great things about
 implicitly satisfied interfaces, it still took us quite a while to really
 internalize what the implications of this simple concept were.
 
-<img align="left" alt="hold the door" src="/img/hodor.jpg">
 Let’s walk through the process that a newcomer to Go might follow in developing
 a simple text processor that replaces instances of _“hodor”_ with _“hold the door”_.
 We will start with a naïve implementation and refactor it over several steps.
-<br clear="left">
 
 ---
 
@@ -225,8 +222,6 @@ performance loss, things are about to get much better.
 ---
 
 ## A Quick Side Note about Replace
-
-!["So I got that going for me, which is nice."](/img/caddyshack.jpg)
 
 Astute readers will see the as yet undefined `Replace` in the above code. In
 effect, it is only `bytes.Replace`.
@@ -478,11 +473,9 @@ BenchmarkProcRead-8    20000  66704 ns/op  28000 B/op  2 allocs/op
 The primary difference is that the B/op metric is 3 orders of magnitude larger
 for long strings.
 
-If you are more of a visual learner, here is the data in a few charts.
-
-<script src="https://www.charted.co/embed.js" data-charted="7e35ad4"></script>
-
-<center><sup>[source data](https://docs.google.com/spreadsheets/d/1Ftxpzfe2dgW4wQiysnMp8dyHspUq-IA-NtDTuI-oNtw/edit?usp=sharing)</sup></center>
+If you are more of a visual learner, [here is the data in a few
+charts](http://www.charted.co/c/f949a56), and [here is its source
+data](https://docs.google.com/spreadsheets/d/1Ftxpzfe2dgW4wQiysnMp8dyHspUq-IA-NtDTuI-oNtw/edit?usp=sharing).
 
 ---
 
@@ -494,8 +487,6 @@ and ending with implementing an `io.Reader`, is certainly a possible, if
 unlikely, progression. While for this simple example `strings.Replace` certainly
 would have sufficed, more complicated algorithms might justify the additional
 complexity.
-
-!["Premature optimization is the root of all evil." - Donald Knuth](/img/knuth.jpg)
 
 Remember, here, as always, write clean, maintainable code first, test it, then
 measure its performance. Only then optimize the parts where the performance is
