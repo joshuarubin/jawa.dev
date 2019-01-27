@@ -1,7 +1,0 @@
-{{ $syntax := resources.Get "css/syntax.css" | resources.Minify -}}
-<style>
-    {{- $syntax.Content | safeCSS -}}
-</style>
-
-{{ template "_internal/opengraph.html" . }}
-{{ template "_internal/twitter_cards.html" . }}
