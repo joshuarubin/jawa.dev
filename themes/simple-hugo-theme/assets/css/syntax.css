@@ -1,17 +1,14 @@
 /* Background */
 .chroma {
   background-color: #232c31;
+  border: 0.1rem solid #425059;
   color: #c5c8c6;
-  border: 1px solid #425059;
-  font-size: 13.6px;
 }
 .chroma .chroma {
   border: none;
 }
 .chroma code {
   background-color: inherit;
-  border-radius: inherit;
-  font-size: inherit;
   padding: inherit;
 }
 /* Error */
@@ -45,14 +42,14 @@
 /* LineNumbersTable */
 .chroma .lnt {
   color: #425059;
-  margin-right: 0.4em;
-  padding: 0 0.4em 0 0.4em;
+  margin-right: 0.56rem;
+  padding: 0 0.56rem 0 0.56rem;
 }
 /* LineNumbers */
 .chroma .ln {
   color: #425059;
-  margin-right: 0.4em;
-  padding: 0 0.4em 0 0.4em;
+  margin-right: 0.56rem;
+  padding: 0 0.56rem 0 0.56rem;
 }
 .chroma .hl .lnt,
 .chroma .hl .ln {
