@@ -107,7 +107,8 @@ code {
   color: #232c31;
 }
 
-time {
+time,
+.reading-time {
   color: #425059;
 }
 

@@ -5,10 +5,14 @@
     {{/* Display the date if set */}}
     {{- if not .Date.IsZero -}}
     <time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format $dateFormat }}</time>
-    {{- end -}}
+    {{- end }}
+
+    <span class="reading-time">
+    {{ .ReadingTime }} min read
+    </span>
 
     {{/* Display taxonomies */}}
-    {{- range $taxo, $taxonomy := .Site.Taxonomies }}
+    {{ range $taxo, $taxonomy := .Site.Taxonomies }}
     {{- $elems := $.Param $taxo }}
     {{- if $elems }}
     {{- range $name := $elems }}
