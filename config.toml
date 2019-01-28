@@ -17,6 +17,9 @@ pygmentsCodeFencesGuessSyntax = true
 pygmentsoptions = "linenos=table"
 pygmentsUseClasses = true
 
+[params]
+  fathom = "LLTGF"
+
 [taxonomies]
   tag = "tags"
   category = "categories"
