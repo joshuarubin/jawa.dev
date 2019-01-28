@@ -7,9 +7,11 @@
     <time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format $dateFormat }}</time>
     {{- end }}
 
+    {{ if not .Params.noreadingtime -}}
     <span class="reading-time">
     {{ .ReadingTime }} min read
     </span>
+    {{- end }}
 
     {{/* Display taxonomies */}}
     {{ range $taxo, $taxonomy := .Site.Taxonomies }}
