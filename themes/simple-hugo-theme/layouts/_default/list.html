@@ -9,9 +9,8 @@
     {{ range .Paginator.Pages }}
         <h2><a href="{{ .RelPermalink }}">{{ .Title | markdownify }}</a></h2>
         {{ partial "post_meta.html" . }}
-        {{ .Summary }}
-        {{ if .Truncated }}
-        <a href="{{ .RelPermalink }}">Read More…</a>
+        {{ with .Params.description }}
+        <div class="description">{{.}}</div>
         {{ end }}
     {{ end }}
 

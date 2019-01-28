@@ -97,10 +97,17 @@ a:hover {
   text-decoration: underline;
 }
 
-code {
+code,
+.categories,
+.tags {
   background-color: #425059;
   border-radius: 0.3rem;
   padding: 0.28rem 0.56rem;
+}
+
+a.categories:hover,
+a.tags:hover {
+  text-decoration: none;
 }
 
 ::selection {

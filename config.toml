@@ -15,13 +15,7 @@ paginatePath = "page"
 pygmentsCodefences = true
 pygmentsCodeFencesGuessSyntax = true
 pygmentsoptions = "linenos=table"
-# pygmentsStyle = "native"
 pygmentsUseClasses = true
-
-[params]
-  description = "Musings. Code. Mostly code."
-  images = ["img/avatar.jpg"]
-  title = "Joshua Rubin"
 
 [taxonomies]
   tag = "tags"

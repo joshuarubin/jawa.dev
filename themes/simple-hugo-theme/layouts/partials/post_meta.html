@@ -19,7 +19,7 @@
     {{- if $elems }}
     {{- range $name := $elems }}
     {{- with $.Site.GetPage (lower (printf "/%s/%s" $taxo (urlize $name))) }}
-    <a href="{{ .Permalink }}">{{ $name }}</a>
+    <a class="{{ $taxo }}" href="{{ .Permalink }}">{{ $name | lower }}</a>
     {{- end }}
     {{- end }}
     {{- end }}
