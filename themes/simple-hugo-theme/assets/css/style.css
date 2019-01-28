@@ -2,7 +2,10 @@ html {
   font-size: 62.5%;
 }
 
-body {
+body,
+form.formspree input[type="email"],
+form.formspree input[type="submit"],
+form.formspree textarea {
   background: #232c31;
   color: #c5c8c6;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
@@ -10,6 +13,9 @@ body {
     "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
   font-size: 1.6rem;
   line-height: 1.6;
+}
+
+body {
   margin: 4rem auto;
   max-width: 90rem;
   padding: 0 1rem;
@@ -20,9 +26,11 @@ h1,
 h2,
 h3 {
   line-height: 1.2;
+  margin: 0;
+  padding: 0;
 }
 
-.header h1 {
+.header {
   border-bottom: 0.1rem solid;
   font-size: 1.8rem;
   font-weight: 400;
@@ -48,6 +56,9 @@ ul.pagination > li {
 
 .footer {
   border-top: 0.1rem solid;
+  margin-top: 2.4rem;
+  padding-bottom: 0;
+  padding-top: 0.8rem;
   text-align: center;
 }
 
@@ -94,4 +105,52 @@ code {
 ::selection {
   background-color: #f0c674;
   color: #232c31;
+}
+
+time {
+  color: #425059;
+}
+
+article {
+  margin: 0;
+  padding: 0;
+}
+
+header {
+  margin-bottom: 2.4rem;
+  padding-bottom: 0.8rem;
+  padding-top: 0;
+}
+
+form.formspree input[type="email"],
+form.formspree input[type="submit"],
+form.formspree textarea {
+  -webkit-appearance: none;
+  border: 0.1rem solid #425059;
+  border-radius: 0;
+  box-sizing: border-box;
+  display: block;
+  margin: 0.5rem 0;
+  max-width: 100%;
+  padding: 0 0.8rem;
+}
+
+form.formspree input[type="email"] {
+  width: 30rem;
+}
+
+form.formspree textarea {
+  height: 20rem;
+  width: 100%;
+}
+
+hr {
+  border: 0;
+  border-top: 0.1rem solid #425059;
+  margin: 2rem auto;
+  width: 25%;
+}
+
+::placeholder {
+  color: #425059;
 }

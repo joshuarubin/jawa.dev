@@ -1,9 +1,9 @@
 ---
-title: Interface Pitfalls and Harnessing io.Reader
+title: Interface Pitfalls and Harnessing `io.Reader`
 date: 2016-10-20T00:00:00-07:00
 draft: false
 description: >
-    Learn what makes Golangs interfaces great, see why io.Reader is amazing and
+    Learn what makes Go’s interfaces great, see why io.Reader is amazing and
     implement a new io.Reader
 images:
   - img/caddyshack.jpg
@@ -13,10 +13,9 @@ tags:
   - Go
 ---
 
-When Go (golang for you robots out there) was first announced I remember looking
-over the list of its key features and feeling astonished that a new language
-would omit the classes and inheritance that I had come to depend on so heavily.
-My interest faded quickly.
+When Go was first announced I remember looking over the list of its key
+features and feeling astonished that a new language would omit the classes and
+inheritance that I had come to depend on so heavily. My interest faded quickly.
 
 Fast forward a few years and our team has fully embraced Go for its speed,
 tooling, standard library, concurrency support and all the other things we know

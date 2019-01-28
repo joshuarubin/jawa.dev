@@ -1,23 +1,21 @@
 {{ define "main" }}
-
-{{/* Display _index.md if available */}}
-{{ if .Content }}
-{{ partial "single" . }}
-{{ end }}
-
-{{/* List all pages */}}
-<ul>
-    {{ range .Paginator.Pages }}
-    <li>
-        <a href="{{ .RelPermalink }}">
-            {{- .Title | markdownify }}
-        </a>
-        {{ partial "post_meta.html" . }}
-    </li>
+<main aria-role="main">
+    {{/* Display _index.md if available */}}
+    {{ if .Content }}
+    {{ partial "single" . }}
     {{ end }}
-</ul>
 
-{{/* Display paginator */}}
-{{ template "_internal/pagination.html" . }}
+    {{/* List all pages */}}
+    {{ range .Paginator.Pages }}
+        <h2><a href="{{ .RelPermalink }}">{{ .Title | markdownify }}</a></h2>
+        {{ partial "post_meta.html" . }}
+        {{ .Summary }}
+        {{ if .Truncated }}
+        <a href="{{ .RelPermalink }}">Read More…</a>
+        {{ end }}
+    {{ end }}
 
+    {{/* Display paginator */}}
+    {{ template "_internal/pagination.html" . }}
+</main>
 {{ end }}

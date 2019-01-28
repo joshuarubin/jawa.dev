@@ -5,9 +5,9 @@ theme = "simple-hugo-theme"
 copyright = "© {year} — <a href=\"https://creativecommons.org/licenses/by/4.0/\">Some rights reserved</a>"
 enableGitInfo = true
 canonifyURLs = true
-# googleAnalytics = "UA-123-45"
 
 enableRobotsTXT = true
+enableEmoji = true
 
 paginate = 3
 paginatePath = "page"
@@ -30,17 +30,13 @@ pygmentsUseClasses = true
 
 [menu]
   [[menu.main]]
-    url = "/posts/"
-    name = "blog"
-    weight = 1
-  [[menu.main]]
     url = "/about/"
     name = "about"
-    weight = 2
+    weight = 1
   [[menu.main]]
     url = "/contact/"
     name = "contact"
-    weight = 3
+    weight = 2
 
   [[menu.footer]]
     url = "https://github.com/joshuarubin"
@@ -50,10 +46,6 @@ pygmentsUseClasses = true
     url = "/posts/index.xml"
     name = "RSS"
     weight = 2
-  # [[menu.footer]]
-  #   url = "mailto:foo@bar.com"
-  #   name = "Contact"
-  #   weight = 3
 
 [permalinks]
   posts = "/posts/:year/:month/:title/"
