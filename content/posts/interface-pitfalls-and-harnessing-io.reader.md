@@ -3,8 +3,8 @@ title: Interface Pitfalls and Harnessing `io.Reader`
 date: 2016-10-20T00:00:00-07:00
 draft: false
 description: >
-    Learn what makes Go’s interfaces great, see why io.Reader is amazing and
-    implement a new io.Reader
+    What makes Go’s interfaces great, why io.Reader is amazing and implement a
+    new io.Reader
 images:
   - img/caddyshack.jpg
 categories:
