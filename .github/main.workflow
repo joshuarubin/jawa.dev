@@ -7,6 +7,6 @@ action "hugo-deploy-gh-pages" {
   uses = "joshuarubin/hugo-deploy-gh-pages@master"
   secrets = ["GITHUB_TOKEN"]
   env = {
-    BRANCH = "master"
+    BRANCH = "gh-pages"
   }
 }
