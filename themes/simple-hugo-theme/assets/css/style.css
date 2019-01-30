@@ -163,3 +163,12 @@ hr {
 ::placeholder {
   color: #425059;
 }
+
+.tags,
+.categories {
+  display: inline-block;
+}
+
+.post-meta {
+  margin-top: 0.3rem;
+}
