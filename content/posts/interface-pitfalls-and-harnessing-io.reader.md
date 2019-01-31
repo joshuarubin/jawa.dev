@@ -11,6 +11,7 @@ categories:
   - Programming
 tags:
   - Go
+canonical: https://jrub.in/golang-interface-pitfalls-and-io-reader-a57e2d8842a2
 ---
 
 When Go was first announced I remember looking over the list of its key
