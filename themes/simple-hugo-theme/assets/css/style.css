@@ -4,6 +4,7 @@ html {
 
 body,
 form.formspree input[type="email"],
+form.formspree input[type="text"],
 form.formspree input[type="submit"],
 form.formspree textarea {
   background: #232c31;
@@ -132,6 +133,7 @@ header {
 }
 
 form.formspree input[type="email"],
+form.formspree input[type="text"],
 form.formspree input[type="submit"],
 form.formspree textarea {
   -webkit-appearance: none;
@@ -144,7 +146,8 @@ form.formspree textarea {
   padding: 0 0.8rem;
 }
 
-form.formspree input[type="email"] {
+form.formspree input[type="email"],
+form.formspree input[type="text"] {
   width: 30rem;
 }
 
