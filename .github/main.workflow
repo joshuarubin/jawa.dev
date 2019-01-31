@@ -6,11 +6,9 @@ workflow "Deploy to GitHub Pages" {
 action "hugo-deploy-gh-pages" {
   uses = "joshuarubin/hugo-deploy-gh-pages@master"
   secrets = [
-    "GITHUB_TOKEN",
-    "PAGES_PUSH_ACCESS_TOKEN",
+    "GIT_DEPLOY_KEY",
   ]
   env = {
     BRANCH = "gh-pages"
-    PAGES_PUSH_USERNAME = "joshuarubin"
   }
 }
