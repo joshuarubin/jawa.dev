@@ -3,7 +3,7 @@ title: Interface Pitfalls and Harnessing `io.Reader`
 date: 2016-10-20T00:00:00-07:00
 draft: false
 description: >
-    What makes Go’s interfaces great, why io.Reader is amazing and implement a
+    What makes Go's interfaces great, why io.Reader is amazing and implement a
     new io.Reader
 images:
   - img/caddyshack.jpg
@@ -20,8 +20,8 @@ inheritance that I had come to depend on so heavily. My interest faded quickly.
 
 Fast forward a few years and our team has fully embraced Go for its speed,
 tooling, standard library, concurrency support and all the other things we know
-and love about Go. If you’re interested in learning more about how we use Go at
-zvelo, we’ve recently [published a blog post](https://zvelo.com/zvelo-on-the-go/).
+and love about Go. If you're interested in learning more about how we use Go at
+zvelo, we've recently [published a blog post](https://zvelo.com/zvelo-on-the-go/).
 
 The concept of interfaces, while certainly not new to us, seemed more like an
 afterthought in our embrace of the language. We had used interfaces in C++, and
@@ -29,8 +29,8 @@ they were useful but tedious. Despite hearing so many great things about
 implicitly satisfied interfaces, it still took us quite a while to really
 internalize what the implications of this simple concept were.
 
-Let’s walk through the process that a newcomer to Go might follow in developing
-a simple text processor that replaces instances of _“hodor”_ with _“hold the door”_.
+Let's walk through the process that a newcomer to Go might follow in developing
+a simple text processor that replaces instances of _"hodor"_ with _"hold the door"_.
 We will start with a naïve implementation and refactor it over several steps.
 
 ---
@@ -54,7 +54,7 @@ string length: 130000B
 BenchmarkNaive-8  200  6584315 ns/op  1494456 B/op  10063 allocs/op
 ```
 
-Let’s ignore for the duration of the exercise the simplicity of the
+Let's ignore for the duration of the exercise the simplicity of the
 function — it simply represents anything that has to modify data. There are
 several obvious problems. First of all, the most glaring issue is that the
 regular expression is being compiled every time _process_ is executed.
@@ -125,10 +125,10 @@ Also, what if we want to operate on large files or even a network socket?
 
 ## Using `io.Reader`
 
-Let’s see if we can make this a bit more generic by using `io.Reader` instead of
-`string`. We’ve seen `io.Reader` used with things like `os.File` and figure that we
+Let's see if we can make this a bit more generic by using `io.Reader` instead of
+`string`. We've seen `io.Reader` used with things like `os.File` and figure that we
 can make that work somehow. But how do we return the processed data to the
-caller? Let’s just return another `io.Reader`.
+caller? Let's just return another `io.Reader`.
 
 ```go
 func process(r io.Reader) (io.Reader, error) {
@@ -150,8 +150,8 @@ string length: 130000B
 BenchmarkBadIface-8  2000  675796 ns/op  1339467 B/op  24 allocs/op
 ```
 
-Great! Now we are using interfaces, we’re golden right? Well… not so much. We
-aren’t using less memory since we are using `ioutil.ReadAll` (which is almost
+Great! Now we are using interfaces, we're golden right? Well… not so much. We
+aren't using less memory since we are using `ioutil.ReadAll` (which is almost
 always incorrect and only works with readers that return `io.EOF`). Further, we
 are just wastefully turning the result into an `io.Reader` from the string. To add
 insult to injury, our performance has dropped significantly across all metrics
@@ -169,7 +169,7 @@ The smaller the chunk size, the greater the number of times data has to be
 copied. There is no right answer for every situation.
 
 It should be noted that there is a bit of a bug in this implementation in that
-the chunk could read until the middle of a _hodor_ and it wouldn’t get replaced
+the chunk could read until the middle of a _hodor_ and it wouldn't get replaced
 properly. Since this code is for demonstration only, fixing it is an exercise
 left to the reader.
 
@@ -216,7 +216,7 @@ BenchmarkBadStream-8  2000  884182 ns/op  1314940 B/op  35 allocs/op
 
 This is definitely a step in the right direction as we are truly streaming the
 data now. However, because we are also managing the output buffer, we still
-require more memory and allocations than necessary. Don’t worry about the
+require more memory and allocations than necessary. Don't worry about the
 performance loss, things are about to get much better.
 
 ---
@@ -297,8 +297,8 @@ no `bytes.ReplaceBuffer` it had to be copied and modified.
 
 ## Pushing Memory Allocation to the Caller
 
-Let’s look at one more possibility for a `Process` func. Rather than handling the
-memory allocation ourselves, with `bytes.Buffer`, let’s let the caller decide how
+Let's look at one more possibility for a `Process` func. Rather than handling the
+memory allocation ourselves, with `bytes.Buffer`, let's let the caller decide how
 to handle memory by allowing a passed in `io.Writer`.
 
 ```go
@@ -481,7 +481,7 @@ data](https://docs.google.com/spreadsheets/d/1Ftxpzfe2dgW4wQiysnMp8dyHspUq-IA-Nt
 
 ## Conclusion
 
-I’ve attempted to illustrate the learning process that someone coming from
+I've attempted to illustrate the learning process that someone coming from
 languages like Perl or Python might follow. Starting with regular expressions
 and ending with implementing an `io.Reader`, is certainly a possible, if
 unlikely, progression. While for this simple example `strings.Replace` certainly
