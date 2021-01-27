@@ -1,0 +1,15 @@
+---
+name: Main
+on: push
+jobs:
+  deploy:
+    name: Deploy to GitHub Pages
+    runs-on: ubuntu-latest
+    steps:
+      - name: Deploy the site
+        uses: reuixiy/hugo-deploy@v1
+        env:
+          DEPLOY_REPO: joshuarubin/jawa.dev
+          DEPLOY_BRANCH: gh-pages
+          DEPLOY_KEY: ${{ secrets.DEPLOY_KEY }}
+          TZ: America/Denver
