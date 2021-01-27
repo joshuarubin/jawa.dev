@@ -6,6 +6,4 @@ description: Musings. Code. Mostly code.
 images:
   - img/avatar.jpg
 title: Joshua Rubin
-images:
-  - img/avatar.jpg
 ---

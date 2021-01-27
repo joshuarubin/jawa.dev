@@ -31,6 +31,10 @@ h3 {
   padding: 0;
 }
 
+.list .description {
+  margin-bottom: 2.4rem;
+}
+
 .header {
   border-bottom: 0.1rem solid;
   font-size: 1.8rem;

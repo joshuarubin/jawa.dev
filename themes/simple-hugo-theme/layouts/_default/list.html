@@ -6,13 +6,15 @@
     {{ end }}
 
     {{/* List all pages */}}
-    {{ range .Paginator.Pages }}
-        <h2><a href="{{ .RelPermalink }}">{{ .Title | markdownify }}</a></h2>
-        {{ partial "post_meta.html" . }}
-        {{ with .Params.description }}
-        <div class="description">{{.}}</div>
+    <div class="list" >
+        {{ range .Paginator.Pages }}
+            <h2><a href="{{ .RelPermalink }}">{{ .Title | markdownify }}</a></h2>
+            {{ partial "post_meta.html" . }}
+            {{ with .Params.description }}
+            <div class="description">{{.}}</div>
+            {{ end }}
         {{ end }}
-    {{ end }}
+    </div>
 
     {{/* Display paginator */}}
     {{ template "_internal/pagination.html" . }}

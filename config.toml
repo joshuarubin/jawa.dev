@@ -9,7 +9,7 @@ canonifyURLs = true
 enableRobotsTXT = true
 enableEmoji = true
 
-paginate = 3
+paginate = 10
 paginatePath = "page"
 
 pygmentsCodefences = true
