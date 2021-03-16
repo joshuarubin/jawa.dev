@@ -5,4 +5,4 @@ description: Contact Joshua
 noreadingtime: true
 ---
 
-{{< formspree "me@jawa.dev" >}}
+{{< formspree "xleoqvnp" >}}
